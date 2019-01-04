@@ -1,1 +1,103 @@
-hi
+
+<!DOCTYPE html>
+<html lang="ko" data-ng-app="app" >
+<head>
+    <title>NAVER OPEN SOURCE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi">
+    <meta name="author" content="NAVER Corp">
+    <meta name="description" content="Open, Share and Enjoy - NAVER Open Source">
+    <meta name="keywords" content="NAVER, Opensource, Open Source, NAVER Open Source">
+    <meta property="og:title" content="Open, Share and Enjoy - NAVER Open Source"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="/assets/images/preview.png"/>
+    <meta property="og:url" content="https://naver.github.io"/>
+    <meta property="og:description" content="Open, Share and Enjoy - NAVER Open Source"/>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/sub.css">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- skip navigation -->
+<div id="u_skip">
+    <dl>
+    <dt class="blind">바로가기 메뉴</dt>
+    <dd><a href="#gnb">메인 메뉴로 바로가기</a></dd>
+    <dd><a href="#container">본문으로 바로가기</a></dd>
+    </dl>
+</div>
+<!-- //skip navigation -->
+<!-- wrap -->
+<div id="wrap">
+    <div id="header" class="git_h">
+        <div class="git_h_con">
+            <h1><img src="/assets/images/n_opensource.png" alt="NAVER OPEN SOURCE"></h1>
+            <a href="https://github.com/naver" class="links_github">github.com/naver</a>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- container -->
+    <div id="container" class="git_ctn">
+        <!-- content -->
+        <div id="content" class="git_con">
+            <div class="git_spot">
+                <div class="spot_con">
+                    <h2>Open, Share and Enjoy!</h2>
+                    <p>Welcome to our open source community</p>
+                </div>
+            </div>
+            <div class="section" data-ng-controller="AppController as appCtrl">
+                <ul class="svc_lst">
+                    <li class="line_f" data-empty="{{project.empty}}" data-ng-repeat="project in appCtrl.projects">
+                        <a data-ng-attr-href="{{project.link}}" target="_blank" ng-if="project.empty==fasle">
+                            <span class="svc_img"><img data-ng-attr-src="{{project.image}}" data-ng-attr-alt="{{project.title}}"></span>
+                            <strong data-ng-bind="project.title"></strong>
+                            <span class="svc_txt" data-ng-bind-html="project.description | unsafe"></span>
+                            <span class="svc_txt2" data-ng-bind="project.tags"></span>
+                        </a>
+                        <div class="empty_img" ng-if="project.empty==true"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //content -->
+    </div>
+    <!-- //container -->
+    <div id="footer" class="git_footer">
+        <div class="git_footer_con">
+            <p class="f_nd2">
+                <a href="http://d2.naver.com" target="_blank">
+                    <img src="/assets/images/naverd2.png" alt="naver d2 logo">
+                </a>
+            </p>
+            <p class="f_copy"><em>&copy;</em> <a href="http://www.navercorp.com/ko/index.nhn" target="_blank">NAVER Corp.</a></p>
+            <p class="f_links">
+                <a href="https://www.facebook.com/naverd2" target="_blank" class="links_fb"><img src="/assets/images/img_f_fb.png" alt="facebook"></a>
+                <a href="https://twitter.com/naver_d2" target="_blank" class="links_tw"><img src="/assets/images/img_f_tw.png" alt="twitter"></a>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- //wrap -->
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/figlet/lib/figlet.js"></script>
+<script src="/assets/vendor/angularjs/angular.min.js"></script>
+<script src="/apps/common.js"></script>
+<script src="/apps/app.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56933950-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
